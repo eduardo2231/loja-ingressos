@@ -219,9 +219,8 @@ def mostar_info(event):
     ids, name, desc, price, quantidade = get_info_ticket(list_buy)
     print(ids, name, desc, price, quantidade)
 
-    info3 = tk.Label(info_product, text=f"{name}\nq"
-                                        f"\n{desc}\n\nPreço: {price} Quantidade: {quantidade}", font=('Arial', 12), width=0, height=0, bg='white', wraplength=390,
-                     justify="left")
+    info3 = tk.Label(info_product, text=f"{name}\n"
+                                        f"\n{desc}\n\nPreço: {price} Quantidade: {quantidade}", font=('Arial', 12), width=0, height=0, bg='white', wraplength=390, justify="left")
     info3.place(x=10, y=10)
 
     button_buy = tk.Button(info_product, text='Comprar', font=('Arial', 12), width=40, height=2, command=pagar, bg='white')
@@ -273,3 +272,14 @@ scroll_buy.config(command=list_buy.yview)
 atualizar_lista()
 
 screen.mainloop()
+
+
+
+
+
+
+
+
+
+
+# bananas sao gostosas
