@@ -2,6 +2,8 @@ import tkinter as tk
 from tkinter import ttk
 import sqlite3
 
+from click import command
+
 screen = tk.Tk()
 screen.configure(bg="grey")
 
@@ -32,8 +34,8 @@ def fechar_e_chamar(scren, x):
     elif x == 2:
         frame_remover_ingressos()
 
-def delete(ids):
-    cursor.execute("DELETE FROM ingressos WHERE id = ?", (ids,))
+def delete(id_d):
+    cursor.execute("DELETE FROM ingressos WHERE id = ?", (id_d,))
     atualizar_lista()
 
 
@@ -130,7 +132,7 @@ def frame_remover_ingressos():
         info_product = tk.Frame(new_caixa, bg='white', width=360, height=560)
         info_product.place(x=415, y=8)
 
-        idB, name, desc, price, quantidade = get_info_ticket(list_remove)
+        id_b, name, desc, price, quantidade = get_info_ticket(list_remove)
 
         info2 = tk.Label(info_product, text=f"{name}\n\n{desc}\n\nPreço: {price} Quantidade: {quantidade}",
                          font=('Arial', 12), width=0, height=0, bg='white', wraplength=390,
