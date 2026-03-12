@@ -282,4 +282,4 @@ screen.mainloop()
 
 
 
-# bananas sao gostosas
+# bananas sao gostosas e demais
