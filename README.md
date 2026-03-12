@@ -29,7 +29,7 @@ O sistema permite:
 ## 📝 Funcionalidades Futuras
 
 - Sistema de login de usuários  
-- Relatórios de vendas  
+- Relatórios de vendas   
 - Integração com pagamentos reais  
 - Interface mais responsiva e moderna  
 
