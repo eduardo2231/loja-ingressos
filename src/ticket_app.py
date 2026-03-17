@@ -34,9 +34,6 @@ def fechar_e_chamar(scren, x):
     elif x == 2:
         frame_remover_ingressos()
 
-def delete(id_d):
-    cursor.execute("DELETE FROM ingressos WHERE id = ?", (id_d,))
-    atualizar_lista()
 
 
 def atualizar_lista():
@@ -127,6 +124,23 @@ def frame_remover_ingressos():
     for igresso in ingressos:
         list_remove.insert("", "end", values=igresso)
 
+    def delete(id_d):
+        cursor.execute("DELETE FROM ingressos WHERE id = ?", (id_d,))
+        conn.commit()
+        atualizar_lista()
+        atualizar_lista_remove()
+
+    def atualizar_lista_remove():
+
+        # Limpa a Treeview
+        for item in list_remove.get_children():
+            list_remove.delete(item)
+        cursor.execute("SELECT id, nome, preco, quantidade FROM ingressos")
+        s = cursor.fetchall()
+
+        for ingresso in s:
+            list_remove.insert("", "end", values=ingresso)
+
 
     def mostar_info_remove(event):
         info_product = tk.Frame(new_caixa, bg='white', width=360, height=560)
@@ -140,7 +154,7 @@ def frame_remover_ingressos():
         info2.place(x=10, y=10)
 
         button_buy = tk.Button(info_product, text='Remover', font=('Arial', 12), width=36, height=2,
-                               bg='white')
+                               bg='white', command=lambda: delete(id_b))
         button_buy.place(x=15, y=500)
 
     list_remove.bind("<<TreeviewSelect>>", mostar_info_remove)
