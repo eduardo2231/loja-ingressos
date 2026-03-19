@@ -12,7 +12,7 @@ screen.geometry('858x700')
 style = ttk.Style()
 screen.resizable(False, False)
 
-conn = sqlite3.connect('../tickets.db')
+conn = sqlite3.connect('../../tickets.db')
 cursor = conn.cursor()
 
 cursor.execute("""

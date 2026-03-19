@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TicketNow</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="nav">
+      <div class="nav__inner">
+        <a class="brand" href="#/">
+          <span class="brand__dot" aria-hidden="true"></span>
+          <span>TicketNow</span>
+        </a>
+
+        <nav class="nav__links" aria-label="Navegação">
+          <a href="#/">Eventos</a>
+          <a id="navAdmin" href="#/admin">Admin</a>
+          <a id="navLogin" class="btn btn--ghost" href="#/login">Entrar</a>
+        </nav>
+
+        <button id="mobileToggle" class="nav__toggle" type="button" aria-label="Abrir menu">
+          ☰
+        </button>
+      </div>
+
+      <div id="mobileMenu" class="nav__mobile hidden">
+        <a href="#/">Eventos</a>
+        <a id="navAdminMobile" href="#/admin">Admin</a>
+        <a id="navLoginMobile" class="btn btn--ghost" href="#/login">Entrar</a>
+      </div>
+    </header>
+
+    <main id="app" class="app" role="main"></main>
+
+    <footer class="footer">
+      <div class="footer__inner">
+        <span class="brand">
+          <span class="brand__dot" aria-hidden="true"></span>
+          <span>TicketNow</span>
+        </span>
+        <p>© 2026 TicketNow</p>
+      </div>
+    </footer>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
